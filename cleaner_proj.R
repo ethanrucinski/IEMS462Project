@@ -1,4 +1,5 @@
-df<-read.csv("catalog_sales_data.csv")
+#df<-read.csv("catalog_sales_data.csv")
+df <- newsales1
 str(df)
 dim(df)
 
@@ -111,6 +112,11 @@ hist(df$recency,breaks=100)
 
 df$recency_factor<-max(df$lp6_bin)-df$lp6_bin
 
+
+
 # in conclusion: new variables lpuryear2, lp6_bin, recency_numeric, recency_factor (use in regression). Don't use variables dm_ad, dm_lp, recency, lpuryear, datelp6.
 # datead6 is unfixed for now (since I think it will be insignificant). If it ends up being significant, I'll change it.
 # Also: use ordtyr2 and ordlyr2 instead of ordtyr and ordlyr
+
+# Save work
+write.csv(df, "Huazhen_Joel_Updated.csv")
