@@ -1,7 +1,7 @@
-#df<-read.csv("catalog_sales_data.csv")
-df <- newsales1
-str(df)
-dim(df)
+df<-read.csv("catalog sales data.csv")
+# df <- newsales1
+# str(df)
+# dim(df)
 
 ##### targdol
 # check distribution
@@ -108,7 +108,7 @@ df$ordlyr2[which(df$slslyr==0&df$ordlyr!=0)]=0
 
 df$recency_numeric<-as.numeric(as.Date("2012-12-01")-as.Date(df$datelp6,"%m/%d/%Y"))
 hist(df$recency)
-hist(df$recency,breaks=100)
+hist(df$recency_numeric,breaks=100)
 
 df$recency_factor<-max(df$lp6_bin)-df$lp6_bin
 
