@@ -30,6 +30,10 @@ df$targdol<-NULL
 # split into training and test
 train<-df[which(df$train==1),]
 
+train <- train[which(rownames(train) != 37839),]
+train <- train[which(rownames(train) != 38283),]
+train <- train[which(rownames(train) != 90895),]
+
 N<-ncol(train)
 
 x<-train[,-N]
